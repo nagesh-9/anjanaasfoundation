@@ -1,1 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Support Anjanaas Foundation's mission. Your donation helps us provide education, skill development, and community support in Avanigadda.">
+    <meta name="keywords" content="Anjanaas Foundation donate, NGO donation, support non-profit, volunteer, give back, Andhra Pradesh, social work">
+    <title>Donate | Anjanaas Foundation</title>
+    
+    <!-- External fonts for modern, professional typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- All CSS styles are now in this <style> block for single-file deployment -->
+    <style>
+        /*
+         * Anjanaas Foundation - Academic & Professional Theme
+         * A clean, high-contrast theme using a classic navy and cream palette with subtle fluorescent accents.
+         *
+         * Color Palette:
+         * --color-primary: #000080; (Deep Navy) - Main text, buttons, and headings.
+         * --color-secondary: #00FFFF; (Fluorescent Cyan) - Subtle accent for links and hovers.
+         * --color-accent: #FF00FF; (Fluorescent Magenta) - Accent for borders and highlights.
+         * --color-bg-light: #F8F8E7; (Soft Cream) - The core background color.
+         * --color-bg-mid: #E8E8D9; (Light Creamy Gray) - A slightly darker background for sections.
+         * --color-text-main: #333333; (Dark Gray) - For body text.
+         */
+
+        /* General & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: var(--color-text-main);
+            background-color: var(--color-bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .text-center { text-align: center; }
+        .text-left { text-align: left; }
+
+        /* Typography & Headings */
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--color-primary);
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.2rem; }
+        h3 { font-size: 1.6rem; }
+
+        .section-title { margin-bottom: 0.5rem; }
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--color-text-main);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Buttons & Interactive Elements */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-bg-light);
+            border-color: var(--color-primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-secondary);
+            color: var(--color-primary);
+            border-color: var(--color-secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-primary);
+            border-color: var(--color-primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-primary);
+            color: var(--color-bg-light);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .btn-link {
+            color: var(--color-primary);
+            font-weight: 600;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        .btn-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--color-secondary);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+        
+        .btn-link:hover {
+            color: var(--color-secondary);
+        }
+        
+        .btn-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        /* --- Header & Navigation --- */
+        .main-header {
+            background-color: var(--color-bg-light);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo img {
+            height: 50px;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text-main);
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--color-secondary);
+            transition: width 0.3s ease-out;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--color-primary);
+        }
+        
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        /* --- Donate Page Specific Styles --- */
+        .donate-section {
+            padding: 80px 0;
+        }
+        
+        .donate-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .donation-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .info-card {
+            background-color: var(--color-bg-mid);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .info-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .donation-form-container {
+            background-color: var(--color-bg-mid);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .donation-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: 'Lato', sans-serif;
+            background-color: var(--color-bg-light);
+            border: 1px solid var(--color-bg-mid);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--color-secondary);
+            box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .donation-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .donation-option {
+            background-color: var(--color-bg-light);
+            border: 1px solid var(--color-primary);
+            color: var(--color-primary);
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .donation-option:hover,
+        .donation-option.active {
+            background-color: var(--color-primary);
+            color: var(--color-bg-light);
+        }
+        
+        .donation-form .btn-primary {
+            align-self: flex-start;
+        }
+
+        /* --- Footer --- */
+        .main-footer {
+            background-color: var(--color-primary);
+            padding: 60px 0 30px;
+            color: var(--color-bg-light);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h4 {
+            color: var(--color-secondary);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li a {
+            color: var(--color-bg-light);
+            text-decoration: none;
+            transition: color 0.3s;
+            line-height: 2.2;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--color-secondary);
+        }
+
+        .social-icons a {
+            font-size: 1.5rem;
+            color: var(--color-bg-light);
+            margin-right: 15px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--color-accent);
+            transform: scale(1.1);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            
+            .main-nav { flex-direction: column; padding-bottom: 10px; }
+            
+            .main-nav .logo { margin-bottom: 15px; }
+            
+            .nav-links { display: none; }
+            
+            .donate-content { gap: 30px; }
+            
+            .donation-info-grid { grid-template-columns: 1fr; }
+            
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .social-icons { display: flex; justify-content: center; }
+        }
+    </style>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="index.html" class="logo">
+                    <!-- Placeholder logo image. Please replace with your actual logo. -->
+                    <img src="https://placehold.co/150x50/000080/FFFFFF?text=ANJANAAS" alt="Anjanaas Foundation Logo" title="Anjanaas Foundation - Empowering Lives">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Our Programs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="donate.html" class="active btn btn-donate">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Donate Section -->
+        <section class="donate-section">
+            <div class="container">
+                <h1 class="section-title text-center">Your Contribution Fuels Our Mission</h1>
+                <p class="section-subtitle text-center">Every donation, no matter the size, helps us provide essential services and opportunities to those who need them most.</p>
+
+                <div class="donate-content">
+                    <div class="donation-info-grid">
+                        <div class="info-card">
+                            <h3>Why Donate?</h3>
+                            <p>Your support directly impacts our ability to carry out our core programs. With your generosity, we can:</p>
+                            <ul>
+                                <li>Provide scholarships for deserving students.</li>
+                                <li>Fund vocational training and skill development workshops.</li>
+                                <li>Organize medical and health camps for the community.</li>
+                                <li>Support our local development and service projects.</li>
+                            </ul>
+                        </div>
+                        <div class="info-card">
+                            <h3>Other Ways to Donate</h3>
+                            <p>If you prefer an alternative method, you can donate directly to our bank account or via UPI.</p>
+                            <p><strong>Bank Details:</strong></p>
+                            <ul>
+                                <li>Account Name: Anjanaas Foundation</li>
+                                <li>Account Number: [Your Account Number Here]</li>
+                                <li>IFSC Code: [Your IFSC Code Here]</li>
+                            </ul>
+                            <p><strong>UPI ID:</strong> [Your UPI ID Here]</p>
+                        </div>
+                    </div>
+                    
+                    <div class="donation-form-container">
+                        <h3>Make a Donation</h3>
+                        <form action="mailto:info@anjanaasfoundation.org" method="post" enctype="text/plain" class="donation-form">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="amount">Donation Amount (INR)</label>
+                                <div class="donation-options">
+                                    <span class="donation-option" data-amount="100">₹100</span>
+                                    <span class="donation-option" data-amount="500">₹500</span>
+                                    <span class="donation-option" data-amount="1000">₹1,000</span>
+                                    <span class="donation-option" data-amount="2000">₹2,000</span>
+                                </div>
+                                <input type="number" id="amount" name="amount" placeholder="Enter custom amount" min="10" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message (Optional)</label>
+                                <textarea id="message" name="message" placeholder="Leave a message for the team."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Donate Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>About Anjanaas</h4>
+                    <p>Anjanaas Foundation is a registered NGO committed to social service, education, and skill development in Avanigadda, Andhra Pradesh.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Anjanaas Foundation on Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Anjanaas Foundation on Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Anjanaas Foundation on YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Our Programs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> H.NO. 1-146/2, Ramachandrapuram, Avanigadda, Krishna District, AP - 521121</p>
+                    <p><i class="fas fa-phone"></i> +91 7382072919, 9491432038</p>
+                    <p><i class="fas fa-envelope"></i> info@anjanaasfoundation.org</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Anjanaas Foundation. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- All JavaScript in a single block at the end of the body -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Anjanaas Foundation donate page loaded.');
+            
+            // Script to handle donation amount selection
+            const donationOptions = document.querySelectorAll('.donation-option');
+            const amountInput = document.getElementById('amount');
+
+            donationOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    // Remove active class from all options
+                    donationOptions.forEach(opt => opt.classList.remove('active'));
+                    // Add active class to the clicked option
+                    option.classList.add('active');
+                    // Set the input value to the data-amount
+                    amountInput.value = option.dataset.amount;
+                });
+            });
+        });
+    </script>
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit-id.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
 
