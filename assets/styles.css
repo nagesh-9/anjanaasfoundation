@@ -1,18 +1,4 @@
-/*
- * Anjanaas Foundation - Professional and Academic Theme
- * Stylesheet for a clean, unique, and SEO-friendly website.
- *
- * Color Palette:
- * --primary-color: #004D40; (Deep Teal/Dark Green) - Represents growth, stability, and nature.
- * --secondary-color: #FFA726; (Bright Orange) - Represents warmth, enthusiasm, and optimism.
- * --accent-color: #26A69A; (Teal) - A lighter, more dynamic shade for accents.
- * --text-dark: #333333; (Dark Gray)
- * --text-light: #F5F5F5; (Light Gray)
- * --bg-light: #FFFFFF; (White)
- * --bg-dark: #00251A; (Very Dark Green)
- */
 
-/* General Styles */
 * {
     box-sizing: border-box;
     margin: 0;
