@@ -15,15 +15,14 @@
     <!-- All CSS styles are now in this <style> block for single-file deployment -->
     <style>
         /*
-         * Anjanaas Foundation - Academic & Professional Theme
-         * A clean, high-contrast theme using a classic navy and cream palette with subtle fluorescent accents.
+         * Anjanaas Foundation - Joyful & Vibrant Theme
+         * A cheerful, modern design using a multi-color gradient, floating shapes, and bold accents.
          *
          * Color Palette:
-         * --color-primary: #000080; (Deep Navy) - Main text, buttons, and headings.
-         * --color-secondary: #00FFFF; (Fluorescent Cyan) - Subtle accent for links and hovers.
-         * --color-accent: #FF00FF; (Fluorescent Magenta) - Accent for borders and highlights.
-         * --color-bg-light: #F8F8E7; (Soft Cream) - The core background color.
-         * --color-bg-mid: #E8E8D9; (Light Creamy Gray) - A slightly darker background for sections.
+         * --color-primary: #172a3a; (Deep Navy)
+         * --color-accent: #ff6b6b; (Vibrant Coral) - Main CTA button and highlights.
+         * --color-secondary-light: #48dbfb; (Bright Cyan) - For secondary accents and links.
+         * --color-bg-light: #ffffff; (Pure White) - The core background color for cards and sections.
          * --color-text-main: #333333; (Dark Gray) - For body text.
          */
 
@@ -42,8 +41,98 @@
             font-family: 'Lato', sans-serif;
             line-height: 1.6;
             color: var(--color-text-main);
-            background-color: var(--color-bg-light);
+            /* Solid white background as requested */
+            background: white;
+            min-height: 100vh;
+            animation: fadeIn 1.2s ease-in-out;
+            position: relative;
+            overflow: hidden; /* Hide floating shapes outside the viewport */
         }
+
+        /* Decorative Floating Shapes */
+        .shape {
+            position: absolute;
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: -1;
+            animation-duration: 20s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            transition: transform 0.5s ease;
+        }
+
+        /* Defining the different shapes with unique colors and sizes */
+        .shape-1 {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #FF6B6B, #FF9F43); /* Red gradient */
+            border-radius: 50%;
+            top: 10%;
+            left: 5%;
+            animation-name: floatShape1;
+        }
+        
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(48deg, #48dbfb, #00BCD4); /* Blue gradient */
+            border-radius: 50%;
+            bottom: 5%;
+            right: 10%;
+            animation-name: floatShape2;
+        }
+        
+        .shape-3 {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(45deg, #FFD700, #FFC94A); /* Yellow gradient */
+            border-radius: 50%;
+            top: 60%;
+            left: 20%;
+            animation-name: floatShape3;
+        }
+
+        .shape-4 {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, #FF6B6B, #FFD700); /* Red-Yellow gradient */
+            border-radius: 20px; /* A rounded square */
+            top: 30%;
+            right: 15%;
+            animation-name: floatShape4;
+        }
+
+        .shape-5 {
+            width: 160px;
+            height: 160px;
+            background: linear-gradient(45deg, #48dbfb, #FFD700); /* Blue-Yellow gradient */
+            border-radius: 50%;
+            bottom: 25%;
+            left: 8%;
+            animation-name: floatShape5;
+        }
+
+        @keyframes floatShape1 {
+            0%, 100% { transform: translateY(0) translateX(0) scale(1); }
+            50% { transform: translateY(-20px) translateX(10px) scale(1.1); }
+        }
+        @keyframes floatShape2 {
+            0%, 100% { transform: translateY(0) translateX(0) scale(1); }
+            50% { transform: translateY(20px) translateX(-15px) scale(0.95); }
+        }
+        @keyframes floatShape3 {
+            0%, 100% { transform: translateY(0) translateX(0) scale(1); }
+            50% { transform: translateY(10px) translateX(20px) scale(1.05); }
+        }
+        @keyframes floatShape4 {
+            0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+            50% { transform: translateY(-15px) rotate(45deg) scale(1.1); }
+        }
+        @keyframes floatShape5 {
+            0%, 100% { transform: translateY(0) translateX(0) scale(1); }
+            50% { transform: translateY(25px) translateX(-5px) scale(1.05); }
+        }
+        
 
         .container {
             max-width: 1200px;
@@ -54,6 +143,17 @@
         .text-center { text-align: center; }
         .text-left { text-align: left; }
 
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         /* Typography & Headings */
         h1, h2, h3 {
             font-family: 'Poppins', sans-serif;
@@ -62,16 +162,30 @@
             color: var(--color-primary);
         }
 
-        h1 { font-size: 3rem; }
-        h2 { font-size: 2.2rem; }
-        h3 { font-size: 1.6rem; }
+        h1 { font-size: 3.5rem; animation: slideInUp 0.8s ease-out; }
+        h2 { font-size: 2.5rem; }
+        h3 { font-size: 1.8rem; }
 
         .section-title { margin-bottom: 0.5rem; }
         .section-subtitle {
-            font-size: 1rem;
-            color: var(--color-text-main);
+            font-size: 1.1rem;
+            color: white; /* Changed for contrast on banner */
             max-width: 700px;
             margin: 0 auto 3rem;
+            animation: fadeIn 1.5s ease-in-out;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-banner {
+            background: linear-gradient(45deg, #FF6B6B, #FFD700, #48DBFB); /* New red, yellow, blue banner */
+            color: white;
+            padding: 60px 20px;
+            border-radius: 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            box-shadow: 0 8px 25px rgba(255, 113, 183, 0.3);
+            transform: translateY(20px);
+            animation: slideInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
         /* Buttons & Interactive Elements */
@@ -90,15 +204,14 @@
         }
 
         .btn-primary {
-            background-color: var(--color-primary);
+            background-color: var(--color-accent);
             color: var(--color-bg-light);
-            border-color: var(--color-primary);
+            border-color: var(--color-accent);
         }
 
         .btn-primary:hover {
-            background-color: var(--color-secondary);
-            color: var(--color-primary);
-            border-color: var(--color-secondary);
+            background-color: transparent;
+            color: var(--color-accent);
             transform: translateY(-3px);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
@@ -117,7 +230,7 @@
         }
         
         .btn-link {
-            color: var(--color-primary);
+            color: var(--color-secondary-light);
             font-weight: 600;
             text-decoration: none;
             position: relative;
@@ -131,14 +244,14 @@
             height: 2px;
             bottom: -5px;
             left: 0;
-            background-color: var(--color-secondary);
+            background-color: var(--color-accent);
             transform: scaleX(0);
             transform-origin: bottom right;
             transition: transform 0.3s ease-out;
         }
         
         .btn-link:hover {
-            color: var(--color-secondary);
+            color: var(--color-accent);
         }
         
         .btn-link:hover::after {
@@ -148,7 +261,8 @@
 
         /* --- Header & Navigation --- */
         .main-header {
-            background-color: var(--color-bg-light);
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
@@ -197,12 +311,12 @@
             height: 2px;
             bottom: -5px;
             left: 0;
-            background: var(--color-secondary);
+            background: var(--color-secondary-light);
             transition: width 0.3s ease-out;
         }
 
         .nav-links a:hover, .nav-links a.active {
-            color: var(--color-primary);
+            color: var(--color-secondary-light);
         }
         
         .nav-links a:hover::after, .nav-links a.active::after {
@@ -229,11 +343,12 @@
         }
         
         .info-card {
-            background-color: var(--color-bg-mid);
+            background-color: var(--color-bg-light);
             padding: 30px;
-            border-radius: 10px;
+            border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+            border-left: 5px solid var(--color-secondary-light);
         }
         
         .info-card:hover {
@@ -243,12 +358,13 @@
         
         .info-card h3 {
             margin-bottom: 10px;
+            color: var(--color-accent);
         }
 
         .donation-form-container {
-            background-color: var(--color-bg-mid);
+            background-color: var(--color-bg-light);
             padding: 40px;
-            border-radius: 10px;
+            border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
         
@@ -273,12 +389,11 @@
         .form-group select {
             width: 100%;
             padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
             font-size: 1rem;
             font-family: 'Lato', sans-serif;
-            background-color: var(--color-bg-light);
-            border: 1px solid var(--color-bg-mid);
+            background-color: #f9f9f9;
             transition: border-color 0.3s, box-shadow 0.3s;
         }
 
@@ -286,8 +401,8 @@
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
-            border-color: var(--color-secondary);
-            box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+            border-color: var(--color-accent);
+            box-shadow: 0 0 5px rgba(255, 107, 107, 0.5);
         }
 
         .form-group textarea {
@@ -303,8 +418,8 @@
         }
 
         .donation-option {
-            background-color: var(--color-bg-light);
-            border: 1px solid var(--color-primary);
+            background-color: #f0f0f0;
+            border: 2px solid transparent;
             color: var(--color-primary);
             padding: 10px 20px;
             border-radius: 50px;
@@ -313,10 +428,15 @@
             font-weight: 600;
         }
 
-        .donation-option:hover,
+        .donation-option:hover {
+            background-color: #e0e0e0;
+        }
+
         .donation-option.active {
-            background-color: var(--color-primary);
-            color: var(--color-bg-light);
+            background-color: var(--color-accent);
+            color: white;
+            border-color: var(--color-accent);
+            box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
         }
         
         .donation-form .btn-primary {
@@ -325,7 +445,7 @@
 
         /* --- Footer --- */
         .main-footer {
-            background-color: var(--color-primary);
+            background: linear-gradient(45deg, var(--color-primary), #2a3d4f);
             padding: 60px 0 30px;
             color: var(--color-bg-light);
         }
@@ -338,7 +458,7 @@
         }
 
         .footer-column h4 {
-            color: var(--color-secondary);
+            color: var(--color-secondary-light);
             margin-bottom: 20px;
             font-weight: 600;
         }
@@ -355,7 +475,7 @@
         }
 
         .footer-column ul li a:hover {
-            color: var(--color-secondary);
+            color: var(--color-secondary-light);
         }
 
         .social-icons a {
@@ -366,7 +486,7 @@
         }
 
         .social-icons a:hover {
-            color: var(--color-accent);
+            color: var(--color-secondary-light);
             transform: scale(1.1);
         }
 
@@ -402,13 +522,20 @@
 </head>
 <body>
 
+    <!-- Decorative floating shapes -->
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+    <div class="shape shape-5"></div>
+
     <!-- Header Section -->
     <header class="main-header">
         <div class="container">
             <nav class="main-nav">
                 <a href="index.html" class="logo">
                     <!-- Placeholder logo image. Please replace with your actual logo. -->
-                    <img src="https://placehold.co/150x50/000080/FFFFFF?text=ANJANAAS" alt="Anjanaas Foundation Logo" title="Anjanaas Foundation - Empowering Lives">
+                    <img src="https://placehold.co/150x50/172a3a/ffffff?text=ANJANAAS" alt="Anjanaas Foundation Logo" title="Anjanaas Foundation - Empowering Lives">
                 </a>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
@@ -425,8 +552,10 @@
         <!-- Donate Section -->
         <section class="donate-section">
             <div class="container">
-                <h1 class="section-title text-center">Your Contribution Fuels Our Mission</h1>
-                <p class="section-subtitle text-center">Every donation, no matter the size, helps us provide essential services and opportunities to those who need them most.</p>
+                <div class="hero-banner text-center">
+                    <h1 class="section-title text-center">Your Contribution Fuels Our Mission</h1>
+                    <p class="section-subtitle text-center">Every donation, no matter the size, helps us provide essential services and opportunities to those who need them most.</p>
+                </div>
 
                 <div class="donate-content">
                     <div class="donation-info-grid">
@@ -547,4 +676,3 @@
 
 </body>
 </html>
-
