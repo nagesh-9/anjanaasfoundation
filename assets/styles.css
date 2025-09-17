@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -12,8 +11,8 @@ html {
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    color: var(--text-dark);
-    background-color: var(--bg-light);
+    color: var(--text-light);
+    background-color: var(--bg-dark);
 }
 
 .container {
@@ -33,7 +32,7 @@ body {
 /* Headings */
 h1, h2, h3 {
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--secondary-color); /* Headings in fluorescent cyan */
     line-height: 1.2;
 }
 
@@ -47,7 +46,7 @@ h3 { font-size: 1.8rem; }
 
 .section-subtitle {
     font-size: 1.1rem;
-    color: #666;
+    color: #b0b0b0;
     max-width: 700px;
     margin: 0 auto 3rem;
 }
@@ -56,60 +55,65 @@ h3 { font-size: 1.8rem; }
 .btn {
     display: inline-block;
     padding: 12px 25px;
-    border-radius: 5px;
+    border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
-    color: var(--text-light);
+    background-color: var(--secondary-color);
+    color: var(--bg-dark);
 }
 
 .btn-primary:hover {
     background-color: var(--accent-color);
-    transform: translateY(-3px);
+    box-shadow: 0 0 15px var(--accent-color);
+    transform: scale(1.05);
 }
 
 .btn-donate {
-    background-color: var(--secondary-color);
-    color: var(--text-dark);
-    border: 2px solid var(--secondary-color);
+    background-color: var(--accent-color);
+    color: var(--bg-dark);
+    border: 2px solid var(--accent-color);
 }
 
 .btn-donate:hover {
-    background-color: #FFB74D;
-    transform: translateY(-3px);
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 15px var(--secondary-color);
+    transform: scale(1.05);
 }
 
 .btn-secondary {
     background-color: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
 }
 
 .btn-secondary:hover {
-    background-color: var(--primary-color);
-    color: var(--text-light);
+    background-color: var(--secondary-color);
+    color: var(--bg-dark);
+    box-shadow: 0 0 15px var(--secondary-color);
 }
 
 .btn-link {
-    color: var(--primary-color);
+    color: var(--accent-color);
     font-weight: 600;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .btn-link:hover {
-    color: var(--accent-color);
+    color: var(--secondary-color);
 }
 
 .btn-cta {
     background-color: var(--secondary-color);
-    color: var(--text-dark);
+    color: var(--bg-dark);
     font-size: 1.2rem;
     padding: 15px 35px;
     border-radius: 50px;
@@ -117,8 +121,8 @@ h3 { font-size: 1.8rem; }
 
 /* --- Header & Navigation --- */
 .main-header {
-    background-color: var(--bg-light);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    background-color: var(--bg-dark);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -147,18 +151,18 @@ h3 { font-size: 1.8rem; }
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-dark);
+    color: var(--text-light);
     font-weight: 600;
     transition: color 0.3s;
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 /* --- Hero Section --- */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero-bg.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 26, 0.8), rgba(0, 0, 26, 0.8)), url('../images/hero-bg.jpg') no-repeat center center/cover;
     color: var(--text-light);
     height: 80vh;
     display: flex;
@@ -169,7 +173,8 @@ h3 { font-size: 1.8rem; }
 
 .hero-title {
     font-size: 4rem;
-    color: var(--text-light);
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px var(--secondary-color);
     margin-bottom: 20px;
 }
 
@@ -177,6 +182,7 @@ h3 { font-size: 1.8rem; }
     font-size: 1.3rem;
     max-width: 800px;
     margin: 0 auto 30px;
+    color: #f0f0f0;
 }
 
 /* --- Sections --- */
@@ -185,7 +191,7 @@ h3 { font-size: 1.8rem; }
 }
 
 .section-light-bg {
-    background-color: #F8F9FA;
+    background-color: var(--bg-light);
 }
 
 /* Services Section */
@@ -200,18 +206,18 @@ h3 { font-size: 1.8rem; }
     background-color: var(--bg-light);
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     flex: 1;
 }
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 0 20px var(--secondary-color);
 }
 
 .card h3 {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     margin: 20px 0 10px;
 }
 
@@ -234,6 +240,7 @@ h3 { font-size: 1.8rem; }
 #about-intro .image-box .img-fluid {
     width: 100%;
     border-radius: 10px;
+    filter: brightness(0.8);
 }
 
 #about-intro .text-box {
@@ -248,19 +255,19 @@ h3 { font-size: 1.8rem; }
     background-color: var(--bg-light);
     border-left: 5px solid var(--accent-color);
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
 .testimonial-quote {
     font-style: italic;
     font-size: 1.2rem;
     margin-bottom: 15px;
-    color: #555;
+    color: #b0b0b0;
 }
 
 .testimonial-author {
     font-weight: 600;
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 /* CTA Banner */
@@ -271,7 +278,8 @@ h3 { font-size: 1.8rem; }
 }
 
 .cta-banner h2 {
-    color: var(--text-light);
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px var(--secondary-color);
     margin-bottom: 15px;
 }
 
@@ -290,7 +298,7 @@ h3 { font-size: 1.8rem; }
 }
 
 .footer-column h4 {
-    color: var(--text-light);
+    color: var(--secondary-color);
     margin-bottom: 20px;
     font-weight: 600;
 }
@@ -319,6 +327,7 @@ h3 { font-size: 1.8rem; }
 
 .social-icons a:hover {
     color: var(--secondary-color);
+    filter: drop-shadow(0 0 5px var(--secondary-color));
 }
 
 .footer-bottom {
@@ -337,7 +346,7 @@ h3 { font-size: 1.8rem; }
     }
 
     .nav-links {
-        display: none; /* Hide for smaller screens, will be managed by JS for a mobile menu */
+        display: none;
     }
 
     #services .cards-container {
