@@ -7,37 +7,476 @@
     <meta name="keywords" content="Anjanaas Foundation, NGO Avanigadda, education empowerment, skill development, career opportunities, community service, non-profit organization, Andhra Pradesh, social work, rural development">
     <title>Anjanaas Foundation | Education & Career Empowerment in Avanigadda</title>
     
-    <link rel="stylesheet" href="assets/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        :root {
+            --primary-color: #3f51b5; /* Indigo */
+            --secondary-color: #ff9800; /* Amber */
+            --text-dark: #333;
+            --text-light: #f4f4f4;
+            --bg-light: #ffffff;
+            --bg-dark: #2c3e50; /* Dark blue/gray */
+            --bg-section: #f9f9f9;
+            --border-color: #ddd;
+            --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* General styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.2rem; }
+        h3 { font-size: 1.5rem; }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-align: center;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        .btn-primary:hover {
+            background-color: #2c3886; /* Darker indigo */
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--bg-light);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-donate, .btn-cta {
+            background-color: var(--secondary-color);
+            color: var(--text-dark);
+            box-shadow: 0 4px 6px rgba(255, 152, 0, 0.3);
+        }
+        
+        .btn-donate:hover, .btn-cta:hover {
+            background-color: #fb8c00; /* Darker amber */
+            transform: translateY(-2px);
+        }
+
+        .btn-link {
+            font-weight: 600;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .btn-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        .btn-link i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn-link:hover i {
+            transform: translateX(5px);
+        }
+
+        .section-padded {
+            padding: 80px 0;
+        }
+
+        .section-light-bg {
+            background-color: var(--bg-section);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+        
+        .text-left {
+            text-align: left;
+        }
+        
+        .section-title {
+            margin-bottom: 10px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        /* Header & Navigation */
+        .main-header {
+            background-color: var(--bg-light);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            color: var(--text-dark);
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .btn-donate {
+            margin-left: 10px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://placehold.co/1200x600/3f51b5/ffffff?text=Anjanaas+Foundation') no-repeat center center/cover;
+            color: var(--text-light);
+            padding: 150px 0;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        /* Services Cards */
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .card-service {
+            background-color: var(--bg-light);
+            border-radius: 10px;
+            padding: 40px 25px;
+            box-shadow: var(--box-shadow);
+            flex: 1;
+            max-width: 350px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .icon-lg {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+        
+        .card-service:hover .icon-lg {
+            color: var(--secondary-color);
+        }
+
+        .card-service h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .card-service p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
+        /* About Intro Section */
+        .flex-container {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .flex-container .image-box, .flex-container .text-box {
+            flex: 1;
+        }
+        
+        .image-box img {
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .text-box p {
+            margin-bottom: 15px;
+        }
+
+        /* Testimonial Section */
+        .testimonial-card {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            background-color: var(--bg-light);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .testimonial-quote {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            text-align: right;
+        }
+
+        /* Call to Action Banner */
+        .cta-banner {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .cta-banner h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .cta-banner p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .btn-cta {
+            font-size: 1.1rem;
+            padding: 15px 35px;
+        }
+
+        /* Footer */
+        .main-footer {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-column h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: var(--text-light);
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+        
+        .footer-column a:hover {
+            opacity: 1;
+            color: var(--secondary-color);
+        }
+
+        .footer-column p {
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .footer-column p i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            font-size: 1.2rem;
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--text-light);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.1rem; }
+            .flex-container { flex-direction: column; }
+            .text-box { text-align: center; }
+            .section-title.text-left { text-align: center; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-column { text-align: center; }
+            .social-icons { justify-content: center; }
+        }
+
+        @media (max-width: 768px) {
+            .main-nav { flex-direction: column; gap: 15px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .logo { margin-bottom: 10px; }
+            .hero { padding: 100px 0; }
+            .hero-title { font-size: 2rem; }
+            .section-padded { padding: 60px 0; }
+            .cards-container { flex-direction: column; align-items: center; }
+            .card-service { max-width: 100%; }
+        }
+    </style>
 </head>
 <body>
 
     <header class="main-header">
         <div class="container">
             <nav class="main-nav">
-                <a href="index.html" class="logo">
-                    <img src="images/logo.png" alt="Anjanaas Foundation Logo" title="Anjanaas Foundation - Empowering Lives">
+                <a href="#hero" class="logo">
+                    <img src="https://placehold.co/120x50/3f51b5/ffffff?text=LOGO" alt="Anjanaas Foundation Logo" title="Anjanaas Foundation - Empowering Lives">
                 </a>
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="programs.html">Our Programs</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="donate.html" class="btn btn-donate">Donate</a></li>
+                    <li><a href="#hero" class="active">Home</a></li>
+                    <li><a href="#about-intro">About Us</a></li>
+                    <li><a href="#services">Our Programs</a></li>
+                    <li><a href="#contact-footer">Contact</a></li>
+                    <li><a href="#donate" class="btn btn-donate">Donate</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="hero">
+        <section id="hero" class="hero">
             <div class="container hero-content">
                 <h1 class="hero-title">Empowering Lives, Building Brighter Futures</h1>
                 <p class="hero-subtitle">Anjanaas Foundation is committed to uplifting communities in Avanigadda through quality education, professional training, and dedicated social service.</p>
-                <a href="programs.html" class="btn btn-primary">Discover Our Impact</a>
+                <a href="#services" class="btn btn-primary">Discover Our Impact</a>
             </div>
         </section>
 
@@ -51,19 +490,19 @@
                         <i class="fas fa-graduation-cap icon-lg"></i>
                         <h3>Education & Empowerment</h3>
                         <p>Providing essential education, competitive exam coaching, and career guidance to equip youth with the knowledge they need to succeed.</p>
-                        <a href="programs.html#education" class="btn-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                        <a href="#services" class="btn-link">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div class="card card-service">
                         <i class="fas fa-briefcase icon-lg"></i>
                         <h3>Career Opportunities</h3>
                         <p>Bridging the gap between academia and industry with vocational training, skill development workshops, and guaranteed job placement assistance.</p>
-                        <a href="programs.html#career" class="btn-link">Explore Careers <i class="fas fa-arrow-right"></i></a>
+                        <a href="#services" class="btn-link">Explore Careers <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div class="card card-service">
                         <i class="fas fa-hand-holding-heart icon-lg"></i>
                         <h3>Service Activities</h3>
                         <p>Engaging in meaningful community service activities, including health camps, agricultural support, and local development projects.</p>
-                        <a href="programs.html#service" class="btn-link">Join Our Cause <i class="fas fa-arrow-right"></i></a>
+                        <a href="#services" class="btn-link">Join Our Cause <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -73,13 +512,13 @@
             <div class="container">
                 <div class="flex-container">
                     <div class="image-box">
-                        <img src="images/about-intro.jpg" alt="Group of people being helped by Anjanaas Foundation" class="img-fluid">
+                        <img src="https://placehold.co/600x400/3f51b5/ffffff?text=About+Us" alt="Group of people being helped by Anjanaas Foundation" class="img-fluid">
                     </div>
                     <div class="text-box">
                         <h2 class="section-title text-left">Our Mission: Transforming Lives</h2>
                         <p>Anjanaas Foundation, based in Avanigadda, is a non-profit organization dedicated to empowering the most vulnerable sections of society. Evolving from a decade-long legacy in education, our mission is to provide a window of opportunities and a strong support system for individuals to attain social protection and financial independence.</p>
                         <p>With a passionate team and a clear vision, we work tirelessly to create a phenomenal transformation in the lives of the needy, one person at a time.</p>
-                        <a href="about.html" class="btn btn-secondary">Read Our Story</a>
+                        <a href="#about-intro" class="btn btn-secondary">Read Our Story</a>
                     </div>
                 </div>
             </div>
@@ -92,20 +531,20 @@
                     <p class="testimonial-quote">"Anjanaas Foundation's vocational training program completely changed my life. Thanks to their support, I learned crucial skills and secured a job that I never thought was possible. I am now able to support my family."</p>
                     <p class="testimonial-author">- Ravi Kumar, Beneficiary & Software Professional</p>
                 </div>
-                <a href="#" class="btn btn-tertiary">View All Success Stories</a>
+                <a href="#impact" class="btn btn-tertiary">View All Success Stories</a>
             </div>
         </section>
 
-        <section id="cta" class="cta-banner">
+        <section id="donate" class="cta-banner">
             <div class="container text-center">
                 <h2>Your Contribution is a Catalyst for Change</h2>
                 <p>Join our mission to empower lives and build a more prosperous community. Your donation directly fuels our programs.</p>
-                <a href="donate.html" class="btn btn-cta">Donate Today</a>
+                <a href="#donate" class="btn btn-cta">Donate Today</a>
             </div>
         </section>
     </main>
 
-    <footer class="main-footer">
+    <footer id="contact-footer" class="main-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column about-column">
@@ -120,11 +559,11 @@
                 <div class="footer-column">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="programs.html">Our Programs</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about-intro">About Us</a></li>
+                        <li><a href="#services">Our Programs</a></li>
+                        <li><a href="#contact-footer">Contact</a></li>
+                        <li><a href="#donate">Donate</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -139,9 +578,6 @@
             </div>
         </div>
     </footer>
-
-    <script src="assets/script.js"></script>
-    <script src="https://kit.fontawesome.com/your-font-awesome-kit-id.js" crossorigin="anonymous"></script>
 
 </body>
 </html>
