@@ -1,444 +1,454 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about the Anjanaas Foundation's mission, vision, and commitment to social service and community empowerment.">
-    <meta name="keywords" content="Anjanaas Foundation about, NGO mission, non-profit vision, social service, Avanigadda, Andhra Pradesh">
-    <title>About Us | Anjanaas Foundation</title>
-    
-    <!-- External fonts for modern, professional typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- All CSS styles are now in this <style> block for single-file deployment -->
-    <style>
-        /*
-         * Anjanaas Foundation - Academic & Professional Theme
-         * A clean, high-contrast theme using a classic navy and cream palette with subtle fluorescent accents.
-         *
-         * Color Palette:
-         * --color-primary: #000080; (Deep Navy) - Main text, buttons, and headings.
-         * --color-secondary: #00FFFF; (Fluorescent Cyan) - Subtle accent for links and hovers.
-         * --color-accent: #FF00FF; (Fluorescent Magenta) - Accent for borders and highlights.
-         * --color-bg-light: #F8F8E7; (Soft Cream) - The core background color.
-         * --color-bg-mid: #E8E8D9; (Light Creamy Gray) - A slightly darker background for sections.
-         * --color-text-main: #333333; (Dark Gray) - For body text.
-         */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about the Anjanaas Foundation's mission, vision, and commitment to social service and community empowerment.">
+    <meta name="keywords" content="Anjanaas Foundation about, NGO mission, non-profit vision, social service, Avanigadda, Andhra Pradesh">
+    <title>About Us | Anjanaas Foundation</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-        /* General & Base Styles */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    <style>
+        :root {
+            --primary-color: #3f51b5; /* Indigo */
+            --secondary-color: #ff9800; /* Amber */
+            --text-dark: #333;
+            --text-light: #f4f4f4;
+            --bg-light: #ffffff;
+            --bg-dark: #2c3e50; /* Dark blue/gray */
+            --bg-section: #f9f9f9;
+            --border-color: #ddd;
+            --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        /* General styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-        body {
-            font-family: 'Lato', sans-serif;
-            line-height: 1.6;
-            color: var(--color-text-main);
-            background-color: var(--color-bg-light);
-        }
+        html {
+            scroll-behavior: smooth;
+        }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
 
-        .text-center { text-align: center; }
-        .text-left { text-align: left; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-        /* Typography & Headings */
-        h1, h2, h3 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            line-height: 1.2;
-            color: var(--color-primary);
-        }
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
 
-        h1 { font-size: 3rem; }
-        h2 { font-size: 2.2rem; }
-        h3 { font-size: 1.6rem; }
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.2rem; }
+        h3 { font-size: 1.5rem; }
 
-        .section-title { margin-bottom: 0.5rem; }
-        .section-subtitle {
-            font-size: 1rem;
-            color: var(--color-text-main);
-            max-width: 700px;
-            margin: 0 auto 3rem;
-        }
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--secondary-color);
+        }
 
-        /* Buttons & Interactive Elements */
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
 
-        .btn-primary {
-            background-color: var(--color-primary);
-            color: var(--color-bg-light);
-            border-color: var(--color-primary);
-        }
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-align: center;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: none;
+            cursor: pointer;
+        }
 
-        .btn-primary:hover {
-            background-color: var(--color-secondary);
-            color: var(--color-primary);
-            border-color: var(--color-secondary);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
 
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--color-primary);
-            border-color: var(--color-primary);
-        }
+        .btn-primary:hover {
+            background-color: #2c3886; /* Darker indigo */
+            transform: translateY(-2px);
+        }
 
-        .btn-secondary:hover {
-            background-color: var(--color-primary);
-            color: var(--color-bg-light);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-            transform: translateY(-3px);
-        }
-        
-        .btn-link {
-            color: var(--color-primary);
-            font-weight: 600;
-            text-decoration: none;
-            position: relative;
-            transition: color 0.3s;
-        }
-        
-        .btn-link::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--color-secondary);
-            transform: scaleX(0);
-            transform-origin: bottom right;
-            transition: transform 0.3s ease-out;
-        }
-        
-        .btn-link:hover {
-            color: var(--color-secondary);
-        }
-        
-        .btn-link:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
+        .btn-secondary {
+            background-color: var(--bg-light);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
 
-        /* --- Header & Navigation --- */
-        .main-header {
-            background-color: var(--color-bg-light);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            transform: translateY(-2px);
+        }
 
-        .main-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
+        .btn-donate, .btn-cta {
+            background-color: var(--secondary-color);
+            color: var(--text-dark);
+            box-shadow: 0 4px 6px rgba(255, 152, 0, 0.3);
+        }
+        
+        .btn-donate:hover, .btn-cta:hover {
+            background-color: #fb8c00; /* Darker amber */
+            transform: translateY(-2px);
+        }
+        
+        .btn-link {
+            font-weight: 600;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .btn-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        .btn-link i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn-link:hover i {
+            transform: translateX(5px);
+        }
 
-        .logo img {
-            height: 50px;
-            border-radius: 5px;
-            transition: transform 0.3s ease;
-        }
+        .section-padded {
+            padding: 80px 0;
+        }
 
-        .logo img:hover {
-            transform: scale(1.05);
-        }
+        .section-light-bg {
+            background-color: var(--bg-section);
+        }
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            align-items: center;
-        }
+        .text-center {
+            text-align: center;
+        }
+        
+        .text-left {
+            text-align: left;
+        }
+        
+        .section-title {
+            margin-bottom: 10px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 40px;
+        }
 
-        .nav-links li {
-            margin-left: 30px;
-        }
+        /* Header & Navigation */
+        .main-header {
+            background-color: var(--bg-light);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--color-text-main);
-            font-weight: 600;
-            transition: color 0.3s;
-            position: relative;
-        }
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo img {
+            height: 150px;
+        }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: var(--color-secondary);
-            transition: width 0.3s ease-out;
-        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
 
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--color-primary);
-        }
-        
-        .nav-links a:hover::after, .nav-links a.active::after {
-            width: 100%;
-        }
-        
-        /* --- About Page Specific Styles --- */
-        .about-section {
-            padding: 80px 0;
-            background-color: var(--color-bg-mid);
-        }
-        
-        .about-content {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .mission-vision-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-        
-        .mission-card, .vision-card {
-            background-color: var(--color-bg-light);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 1;
-        }
-        
-        .mission-card h3, .vision-card h3 {
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 40px;
-        }
-        
-        .mission-card h3::before {
-            content: "\f0a9"; /* Font Awesome handshake icon */
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 2rem;
-            color: var(--color-accent);
-        }
+        .nav-links a {
+            font-weight: 800;
+            color: var(--text-dark);
+            padding: 10px 0;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
 
-        .vision-card h3::before {
-            content: "\f06e"; /* Font Awesome eye icon */
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 2rem;
-            color: var(--color-secondary);
-        }
+        .btn-donate {
+            margin-left: 10px;
+        }
 
-        /* --- Footer --- */
-        .main-footer {
-            background-color: var(--color-primary);
-            padding: 60px 0 30px;
-            color: var(--color-bg-light);
-        }
+        /* About Page Specific Styles */
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            align-items: center;
+        }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-bottom: 40px;
-        }
+        .card-mv {
+            background-color: var(--bg-light);
+            border-radius: 10px;
+            padding: 40px 25px;
+            box-shadow: var(--box-shadow);
+            flex: 1;
+            max-width: 500px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-        .footer-column h4 {
-            color: var(--color-secondary);
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
+        .card-mv:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
 
-        .footer-column ul li a {
-            color: var(--color-bg-light);
-            text-decoration: none;
-            transition: color 0.3s;
-            line-height: 2.2;
-        }
+        .icon-lg {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+        
+        .card-mv:hover .icon-lg {
+            color: var(--secondary-color);
+        }
+        
+        .card-mv h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .card-mv p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
+        /* Footer */
+        .main-footer {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            padding: 60px 0 20px;
+        }
 
-        .footer-column ul li a:hover {
-            color: var(--color-secondary);
-        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-column h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
 
-        .social-icons a {
-            font-size: 1.5rem;
-            color: var(--color-bg-light);
-            margin-right: 15px;
-            transition: color 0.3s, transform 0.3s;
-        }
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: var(--text-light);
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+        
+        .footer-column a:hover {
+            opacity: 1;
+            color: var(--secondary-color);
+        }
 
-        .social-icons a:hover {
-            color: var(--color-accent);
-            transform: scale(1.1);
-        }
+        .footer-column p {
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .footer-column p i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
 
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #ccc;
-        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            font-size: 1.2rem;
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--text-light);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
 
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; }
-            
-            .main-nav { flex-direction: column; padding-bottom: 10px; }
-            
-            .main-nav .logo { margin-bottom: 15px; }
-            
-            .nav-links { display: none; }
-            
-            .about-content { gap: 30px; }
-            
-            .mission-vision-grid { grid-template-columns: 1fr; }
-            
-            .footer-grid { grid-template-columns: 1fr; text-align: center; }
-            .social-icons { display: flex; justify-content: center; }
-        }
-    </style>
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.1rem; }
+            .flex-container { flex-direction: column; }
+            .text-box { text-align: center; }
+            .section-title.text-left { text-align: center; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-column { text-align: center; }
+            .social-icons { justify-content: center; }
+        }
+
+        @media (max-width: 768px) {
+            .main-nav { flex-direction: column; gap: 15px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .logo { margin-bottom: 10px; }
+            .hero { padding: 100px 0; }
+            .hero-title { font-size: 2rem; }
+            .section-padded { padding: 60px 0; }
+            .cards-container { flex-direction: column; align-items: center; }
+            .card-service { max-width: 100%; }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Header Section -->
-    <header class="main-header">
-        <div class="container">
-            <nav class="main-nav">
-                <a href="index.html" class="logo">
-                    <!-- Placeholder logo image. Please replace with your actual logo. -->
-                    <img src="https://placehold.co/150x50/000080/FFFFFF?text=ANJANAAS" alt="Anjanaas Foundation Logo" title="Anjanaas Foundation - Empowering Lives">
-                </a>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="active">About Us</a></li>
-                    <li><a href="programs.html">Our Programs</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="donate.html" class="btn btn-donate">Donate</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="index.html" class="logo">
+                    <img src="logo.png" alt="Anjanaas Foundation Logo" title="Anjanaas Foundation - Empowering Lives">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="programs.html">Our Programs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <main>
-        <!-- About Section -->
-        <section class="about-section">
-            <div class="container">
-                <h1 class="section-title text-center">About Our Foundation</h1>
-                <p class="section-subtitle text-center">We are a non-profit organization dedicated to empowering communities and fostering a brighter future for all.</p>
+    <main>
+        <section class="section-padded section-light-bg">
+            <div class="container text-center">
+                <h1 class="section-title">Our Story: Empowering Communities</h1>
+                <p class="section-subtitle">We are a non-profit organization dedicated to empowering communities and fostering a brighter future for all.</p>
 
-                <div class="about-content">
-                    <p>Anjanaas Foundation is a registered NGO located in Avanigadda, Krishna District, Andhra Pradesh. Our journey began with a profound vision: to uplift the most vulnerable sections of society by providing a window of opportunity and a strong support system. We believe that true change begins with empowerment and a commitment to service. Our foundation is the evolution of a decade-long legacy in education, now expanding to address social protection and financial independence for the needy.</p>
+                <div class="flex-container">
+                    <div class="text-box">
+                        <p>Anjanaas Foundation is a registered NGO located in Avanigadda, Krishna District, Andhra Pradesh. Our journey began with a profound vision: to uplift the most vulnerable sections of society by providing a window of opportunity and a strong support system. We believe that true change begins with empowerment and a commitment to service. Our foundation is the evolution of a decade-long legacy in education, now expanding to address social protection and financial independence for the needy.</p>
+                    </div>
+                    <div class="image-box">
+                        <img src="https://placehold.co/600x400/3f51b5/ffffff?text=Our+Story" alt="Image representing Anjanaas Foundation's mission" class="img-fluid">
+                    </div>
+                </div>
 
-                    <div class="mission-vision-grid">
-                        <div class="mission-card">
-                            <h3>Our Mission</h3>
-                            <p>To provide holistic support that fosters education, skill development, and self-reliance. We are committed to bridging the gap between potential and opportunity, ensuring every individual has the chance to thrive and contribute meaningfully to society.</p>
-                        </div>
-                        <div class="vision-card">
-                            <h3>Our Vision</h3>
-                            <p>To create a community where every individual is empowered to achieve social protection and financial independence. We envision a future where all people, regardless of their background, have the tools and support they need to build a better life for themselves and their families.</p>
-                        </div>
-                    </div>
-                    
-                    <p>Our work is driven by a deep-seated commitment to making a tangible difference in the lives of those we serve. By focusing on education, career opportunities, and direct service activities, we are building a foundation for sustainable growth and long-term prosperity. We invite you to join us on this journey of transformation and impact.</p>
-                </div>
-            </div>
-        </section>
-    </main>
+                <div class="flex-container" style="margin-top: 50px;">
+                    <div class="card-mv">
+                        <i class="fas fa-handshake icon-lg"></i>
+                        <h3>Our Mission</h3>
+                        <p>To provide holistic support that fosters education, skill development, and self-reliance. We are committed to bridging the gap between potential and opportunity, ensuring every individual has the chance to thrive and contribute meaningfully to society.</p>
+                    </div>
+                    <div class="card-mv">
+                        <i class="fas fa-eye icon-lg"></i>
+                        <h3>Our Vision</h3>
+                        <p>To create a community where every individual is empowered to achieve social protection and financial independence. We envision a future where all people, regardless of their background, have the tools and support they need to build a better life for themselves and their families.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <!-- Footer Section -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h4>About Anjanaas</h4>
-                    <p>Anjanaas Foundation is a registered NGO committed to social service, education, and skill development in Avanigadda, Andhra Pradesh.</p>
-                    <div class="social-icons">
-                        <a href="#" aria-label="Anjanaas Foundation on Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Anjanaas Foundation on Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Anjanaas Foundation on YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="programs.html">Our Programs</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="donate.html">Donate</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Contact Us</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> H.NO. 1-146/2, Ramachandrapuram, Avanigadda, Krishna District, AP - 521121</p>
-                    <p><i class="fas fa-phone"></i> +91 7382072919, 9491432038</p>
-                    <p><i class="fas fa-envelope"></i> info@anjanaasfoundation.org</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Anjanaas Foundation. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- All JavaScript in a single block at the end of the body -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log('Anjanaas Foundation about page loaded.');
-            
-            // Placeholder for any future JavaScript functionality.
-        });
-    </script>
-    <script src="https://kit.fontawesome.com/your-font-awesome-kit-id.js" crossorigin="anonymous"></script>
+    <footer id="contact-footer" class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column about-column">
+                    <h4>About Anjanaas</h4>
+                    <p>Anjanaas Foundation is a registered NGO committed to social service, education, and skill development in Avanigadda, Andhra Pradesh.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Anjanaas Foundation on Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Anjanaas Foundation on Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Anjanaas Foundation on YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Our Programs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> H.NO. 1-146/2, Ramachandrapuram, Avanigadda, Krishna District, AP - 521121</p>
+                    <p><i class="fas fa-phone"></i> +91 7382072919, 9491432038</p>
+                    <p><i class="fas fa-envelope"></i> info@anjanaasfoundation.org</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Anjanaas Foundation. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
-
