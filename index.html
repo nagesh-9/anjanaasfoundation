@@ -302,30 +302,53 @@
             margin-bottom: 15px;
         }
 
-        /* Testimonial Section */
-        .testimonial-card {
-            max-width: 800px;
-            margin: 0 auto 40px;
-            background-color: var(--bg-light);
-            padding: 40px;
+        /* Photo Gallery Section */
+        .photo-gallery {
+            padding-top: 40px;
+        }
+
+        .gallery-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x mandatory;
+            display: flex;
+            gap: 20px;
+            padding-bottom: 20px;
+            scroll-behavior: smooth; /* For smooth scrolling animation */
+        }
+
+        .gallery-item {
+            flex-shrink: 0;
+            width: 300px; /* Adjust size as needed */
+            height: 250px; /* Fixed height for consistency */
+            overflow: hidden;
             border-radius: 10px;
             box-shadow: var(--box-shadow);
-            border-left: 5px solid var(--secondary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            scroll-snap-align: start;
         }
 
-        .testimonial-quote {
-            font-size: 1.2rem;
-            font-style: italic;
-            color: #555;
-            margin-bottom: 15px;
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--primary-color);
-            text-align: right;
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
+        /* Hide scrollbar for aesthetics */
+        .gallery-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+        .gallery-wrapper {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        
         /* Call to Action Banner */
         .cta-banner {
             background-color: var(--primary-color);
@@ -457,15 +480,15 @@
     <header class="main-header">
         <div class="container">
             <nav class="main-nav">
-                <a href="#hero" class="logo">
+                <a href="index.html" class="logo">
                     <img src="https://placehold.co/120x50/3f51b5/ffffff?text=LOGO" alt="Anjanaas Foundation Logo" title="Anjanaas Foundation - Empowering Lives">
                 </a>
                 <ul class="nav-links">
-                    <li><a href="#hero" class="active">Home</a></li>
-                    <li><a href="#about-intro">About Us</a></li>
-                    <li><a href="#services">Our Programs</a></li>
-                    <li><a href="#contact-footer">Contact</a></li>
-                    <li><a href="#donate" class="btn btn-donate">Donate</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Our Programs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="donate.html" class="btn btn-donate">Donate</a></li>
                 </ul>
             </nav>
         </div>
@@ -490,19 +513,19 @@
                         <i class="fas fa-graduation-cap icon-lg"></i>
                         <h3>Education & Empowerment</h3>
                         <p>Providing essential education, competitive exam coaching, and career guidance to equip youth with the knowledge they need to succeed.</p>
-                        <a href="#services" class="btn-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                        <a href="programs.html" class="btn-link">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div class="card card-service">
                         <i class="fas fa-briefcase icon-lg"></i>
                         <h3>Career Opportunities</h3>
                         <p>Bridging the gap between academia and industry with vocational training, skill development workshops, and guaranteed job placement assistance.</p>
-                        <a href="#services" class="btn-link">Explore Careers <i class="fas fa-arrow-right"></i></a>
+                        <a href="programs.html" class="btn-link">Explore Careers <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div class="card card-service">
                         <i class="fas fa-hand-holding-heart icon-lg"></i>
                         <h3>Service Activities</h3>
                         <p>Engaging in meaningful community service activities, including health camps, agricultural support, and local development projects.</p>
-                        <a href="#services" class="btn-link">Join Our Cause <i class="fas fa-arrow-right"></i></a>
+                        <a href="programs.html" class="btn-link">Join Our Cause <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -518,20 +541,36 @@
                         <h2 class="section-title text-left">Our Mission: Transforming Lives</h2>
                         <p>Anjanaas Foundation, based in Avanigadda, is a non-profit organization dedicated to empowering the most vulnerable sections of society. Evolving from a decade-long legacy in education, our mission is to provide a window of opportunities and a strong support system for individuals to attain social protection and financial independence.</p>
                         <p>With a passionate team and a clear vision, we work tirelessly to create a phenomenal transformation in the lives of the needy, one person at a time.</p>
-                        <a href="#about-intro" class="btn btn-secondary">Read Our Story</a>
+                        <a href="about.html" class="btn btn-secondary">Read Our Story</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="impact" class="section-padded text-center">
+        <section id="gallery" class="section-padded text-center">
             <div class="container">
-                <h2 class="section-title">Hear from Our Community</h2>
-                <div class="testimonial-card">
-                    <p class="testimonial-quote">"Anjanaas Foundation's vocational training program completely changed my life. Thanks to their support, I learned crucial skills and secured a job that I never thought was possible. I am now able to support my family."</p>
-                    <p class="testimonial-author">- Ravi Kumar, Beneficiary & Software Professional</p>
+                <h2 class="section-title">A Glimpse of Our Work</h2>
+                <p class="section-subtitle">View our photo gallery to see the impact of our programs and community service activities. Scroll to see more photos.</p>
+                <div class="gallery-wrapper">
+                    <div class="gallery-item">
+                        <img src="https://placehold.co/400x300/f37a28/ffffff?text=Education+Drive" alt="Volunteers distributing educational supplies to children">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://placehold.co/400x300/3f51b5/ffffff?text=Skill+Training+Session" alt="Young adults participating in a skill development workshop">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://placehold.co/400x300/ff9800/ffffff?text=Community+Health+Camp" alt="A doctor examining a patient at a free community health camp">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://placehold.co/400x300/f37a28/ffffff?text=Agricultural+Support" alt="Farmers receiving guidance on new farming techniques">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://placehold.co/400x300/3f51b5/ffffff?text=Youth+Empowerment" alt="A mentor speaking to a group of inspired youth">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://placehold.co/400x300/ff9800/ffffff?text=Group+Photo" alt="Anjanaas Foundation team and community members smiling for a group photo">
+                    </div>
                 </div>
-                <a href="#impact" class="btn btn-tertiary">View All Success Stories</a>
             </div>
         </section>
 
@@ -539,7 +578,7 @@
             <div class="container text-center">
                 <h2>Your Contribution is a Catalyst for Change</h2>
                 <p>Join our mission to empower lives and build a more prosperous community. Your donation directly fuels our programs.</p>
-                <a href="#donate" class="btn btn-cta">Donate Today</a>
+                <a href="donate.html" class="btn btn-cta">Donate Today</a>
             </div>
         </section>
     </main>
@@ -559,11 +598,11 @@
                 <div class="footer-column">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#hero">Home</a></li>
-                        <li><a href="#about-intro">About Us</a></li>
-                        <li><a href="#services">Our Programs</a></li>
-                        <li><a href="#contact-footer">Contact</a></li>
-                        <li><a href="#donate">Donate</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Our Programs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="donate.html">Donate</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -578,6 +617,44 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Get the gallery wrapper element
+        const galleryWrapper = document.querySelector('.gallery-wrapper');
+        
+        // Define the scroll speed and interval
+        let scrollSpeed = 0.5; // Controls the speed of the scroll
+        const scrollInterval = 20; // Time in milliseconds between scroll steps
+        let intervalId; // To store the interval ID for clearing
+
+        // Function to start the auto-scroll
+        function startAutoScroll() {
+            intervalId = setInterval(() => {
+                // Check if the scroll has reached the end
+                if (galleryWrapper.scrollLeft + galleryWrapper.clientWidth >= galleryWrapper.scrollWidth) {
+                    // Reset to the beginning for a continuous loop
+                    galleryWrapper.scrollLeft = 0;
+                } else {
+                    // Increment the scroll position
+                    galleryWrapper.scrollLeft += scrollSpeed;
+                }
+            }, scrollInterval);
+        }
+
+        // Function to stop the auto-scroll
+        function stopAutoScroll() {
+            clearInterval(intervalId);
+        }
+
+        // Start scrolling when the page loads
+        window.onload = startAutoScroll;
+
+        // Pause the scroll on mouseover
+        galleryWrapper.addEventListener('mouseover', stopAutoScroll);
+        
+        // Resume the scroll on mouseout
+        galleryWrapper.addEventListener('mouseout', startAutoScroll);
+    </script>
 
 </body>
 </html>
