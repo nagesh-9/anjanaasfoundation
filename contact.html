@@ -7,505 +7,165 @@
     <meta name="keywords" content="Anjanaas Foundation contact, NGO contact, contact form, Avanigadda, Andhra Pradesh, volunteer, donate">
     <title>Contact Us | Anjanaas Foundation</title>
     
-    <!-- External fonts for modern, professional typography -->
+    <!-- External fonts from Google Fonts for typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- All CSS styles are now in this <style> block for single-file deployment -->
-    <style>
-        /*
-         * Anjanaas Foundation - Academic & Professional Theme
-         * A clean, high-contrast theme using a classic navy and cream palette with subtle fluorescent accents.
-         *
-         * Color Palette:
-         * --color-primary: #000080; (Deep Navy) - Main text, buttons, and headings.
-         * --color-secondary: #00FFFF; (Fluorescent Cyan) - Subtle accent for links and hovers.
-         * --color-accent: #FF00FF; (Fluorescent Magenta) - Accent for borders and highlights.
-         * --color-bg-light: #F8F8E7; (Soft Cream) - The core background color.
-         * --color-bg-mid: #E8E8D9; (Light Creamy Gray) - A slightly darker background for sections.
-         * --color-text-main: #333333; (Dark Gray) - For body text.
-         */
-
-        /* General & Base Styles */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            line-height: 1.6;
-            color: var(--color-text-main);
-            background-color: var(--color-bg-light);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .text-center { text-align: center; }
-        .text-left { text-align: left; }
-
-        /* Typography & Headings */
-        h1, h2, h3 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            line-height: 1.2;
-            color: var(--color-primary);
-        }
-
-        h1 { font-size: 3rem; }
-        h2 { font-size: 2.2rem; }
-        h3 { font-size: 1.6rem; }
-
-        .section-title { margin-bottom: 0.5rem; }
-        .section-subtitle {
-            font-size: 1rem;
-            color: var(--color-text-main);
-            max-width: 700px;
-            margin: 0 auto 3rem;
-        }
-
-        /* Buttons & Interactive Elements */
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-primary {
-            background-color: var(--color-primary);
-            color: var(--color-bg-light);
-            border-color: var(--color-primary);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--color-secondary);
-            color: var(--color-primary);
-            border-color: var(--color-secondary);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--color-primary);
-            border-color: var(--color-primary);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--color-primary);
-            color: var(--color-bg-light);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-            transform: translateY(-3px);
-        }
-        
-        .btn-link {
-            color: var(--color-primary);
-            font-weight: 600;
-            text-decoration: none;
-            position: relative;
-            transition: color 0.3s;
-        }
-        
-        .btn-link::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--color-secondary);
-            transform: scaleX(0);
-            transform-origin: bottom right;
-            transition: transform 0.3s ease-out;
-        }
-        
-        .btn-link:hover {
-            color: var(--color-secondary);
-        }
-        
-        .btn-link:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
-
-        /* --- Header & Navigation --- */
-        .main-header {
-            background-color: var(--color-bg-light);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .main-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-
-        .logo img {
-            height: 50px;
-            border-radius: 5px;
-            transition: transform 0.3s ease;
-        }
-
-        .logo img:hover {
-            transform: scale(1.05);
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-links li {
-            margin-left: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--color-text-main);
-            font-weight: 600;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: var(--color-secondary);
-            transition: width 0.3s ease-out;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--color-primary);
-        }
-        
-        .nav-links a:hover::after, .nav-links a.active::after {
-            width: 100%;
-        }
-
-        /* --- Contact Page Specific Styles --- */
-        .contact-section {
-            padding: 80px 0;
-            display: flex;
-            gap: 50px;
-            align-items: flex-start;
-        }
-
-        .contact-info {
-            flex: 1;
-        }
-
-        .contact-info h2 {
-            margin-bottom: 20px;
-        }
-
-        .contact-info p {
-            margin-bottom: 15px;
-        }
-
-        .contact-info .info-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            font-size: 1rem;
-        }
-
-        .contact-info .info-item i {
-            font-size: 1.5rem;
-            color: var(--color-accent);
-            margin-right: 15px;
-            width: 30px; /* Consistent icon size */
-            text-align: center;
-        }
-        
-        .contact-info a {
-            color: var(--color-text-main);
-            text-decoration: none;
-        }
-
-        .contact-form-container {
-            flex: 1;
-            background-color: var(--color-bg-mid);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--color-primary);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-family: 'Lato', sans-serif;
-            background-color: var(--color-bg-light);
-            border: 1px solid var(--color-bg-mid);
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--color-secondary);
-            box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-        
-        .contact-form .btn-primary {
-            align-self: flex-start;
-        }
-
-        /* --- Footer --- */
-        .main-footer {
-            background-color: var(--color-primary);
-            padding: 60px 0 30px;
-            color: var(--color-bg-light);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-column h4 {
-            color: var(--color-secondary);
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li a {
-            color: var(--color-bg-light);
-            text-decoration: none;
-            transition: color 0.3s;
-            line-height: 2.2;
-        }
-
-        .footer-column ul li a:hover {
-            color: var(--color-secondary);
-        }
-
-        .social-icons a {
-            font-size: 1.5rem;
-            color: var(--color-bg-light);
-            margin-right: 15px;
-            transition: color 0.3s, transform 0.3s;
-        }
-
-        .social-icons a:hover {
-            color: var(--color-accent);
-            transform: scale(1.1);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #ccc;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; }
-            
-            .main-nav { flex-direction: column; padding-bottom: 10px; }
-            
-            .main-nav .logo { margin-bottom: 15px; }
-            
-            .nav-links { display: none; }
-            
-            .contact-section { flex-direction: column; }
-            
-            .footer-grid { grid-template-columns: 1fr; text-align: center; }
-            .social-icons { display: flex; justify-content: center; }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Tailwind CSS for utility-first styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom styles to set fonts -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
 
-    <!-- Header Section -->
-    <header class="main-header">
-        <div class="container">
-            <nav class="main-nav">
-                <a href="index.html" class="logo">
-                    <!-- Placeholder logo image. Please replace with your actual logo. -->
-                    <img src="https://placehold.co/150x50/000080/FFFFFF?text=ANJANAAS" alt="Anjanaas Foundation Logo" title="Anjanaas Foundation - Empowering Lives">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex items-center justify-between py-4">
+                <a href="index.html" class="flex-shrink-0">
+                    <!-- Placeholder logo. Replace 'logo.png' with your actual logo file. -->
+                    <img src="logo.png" alt="Anjanaas Foundation Logo" title="Anjanaas Foundation - Empowering Lives" class="h-20 sm:h-24 md:h-28 lg:h-32 rounded-full shadow-lg">
                 </a>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="programs.html">Our Programs</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
-                    <li><a href="donate.html" class="btn btn-donate">Donate</a></li>
+                <ul class="flex flex-wrap items-center space-x-4 sm:space-x-6 md:space-x-8">
+                    <li><a href="index.html" class="font-bold text-gray-800 hover:text-indigo-600 transition-colors duration-300">Home</a></li>
+                    <li><a href="about.html" class="font-bold text-gray-800 hover:text-indigo-600 transition-colors duration-300">About Us</a></li>
+                    <li><a href="programs.html" class="font-bold text-gray-800 hover:text-indigo-600 transition-colors duration-300">Our Programs</a></li>
+                    <li><a href="contact.html" class="font-bold text-indigo-600 hover:text-indigo-600 transition-colors duration-300 relative group">Contact
+                        <span class="absolute left-0 bottom-0 h-0.5 w-full bg-indigo-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                    </a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <!-- Contact Section -->
-        <section class="section-padded contact-section">
-            <div class="container">
-                <h1 class="section-title text-center">Get in Touch</h1>
-                <p class="section-subtitle text-center">We would love to hear from you. Whether you have a question, want to volunteer, or need support, our team is ready to help.</p>
+        <!-- Hero Section -->
+        <section class="py-16 sm:py-24 bg-gray-100">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-indigo-800 mb-4">Get in Touch</h1>
+                <p class="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">We would love to hear from you. Whether you have a question, want to volunteer, or need support, our team is ready to help.</p>
+            </div>
+        </section>
 
-                <div class="contact-section">
-                    <div class="contact-info">
-                        <h2>Contact Information</h2>
-                        <p>Feel free to reach out to us through any of the following channels.</p>
+        <!-- Main Contact Section -->
+        <section class="py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20 text-center lg:text-left">
+                    <div class="lg:w-1/2">
+                        <h2 class="text-2xl sm:text-3xl font-bold text-indigo-700 mb-6">Connect with Us Instantly</h2>
+                        <p class="text-gray-700 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
+                            You can reach out to us directly through phone, email, or social media. We are committed to
+                            responding to your inquiries as quickly as possible.
+                        </p>
                         
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <p>H.NO. 1-146/2, Ramachandrapuram, Avanigadda, Krishna District, AP - 521121</p>
+                        <!-- Emphasis on buttons -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto lg:mx-0">
+                            <!-- Call Button -->
+                            <a href="tel:+917382072919" class="bg-indigo-600 text-white font-bold py-4 px-6 rounded-full shadow-lg hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-3">
+                                <i class="fas fa-phone text-xl"></i>
+                                <span class="text-lg">Call Us</span>
+                            </a>
+                            <!-- WhatsApp Button -->
+                            <a href="https://wa.me/917382072919" target="_blank" class="bg-green-500 text-white font-bold py-4 px-6 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-3">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                                <span class="text-lg">WhatsApp Us</span>
+                            </a>
+                            <!-- Email Button -->
+                            <a href="mailto:info@anjanaasfoundation.org" class="bg-amber-500 text-white font-bold py-4 px-6 rounded-full shadow-lg hover:bg-amber-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-3">
+                                <i class="fas fa-envelope text-xl"></i>
+                                <span class="text-lg">Email Us</span>
+                            </a>
+                            <!-- Facebook Button -->
+                            <a href="https://www.facebook.com/yourpage" target="_blank" class="bg-blue-600 text-white font-bold py-4 px-6 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-3">
+                                <i class="fab fa-facebook-f text-xl"></i>
+                                <span class="text-lg">Facebook</span>
+                            </a>
+                            <!-- Instagram Button -->
+                            <a href="https://www.instagram.com/yourprofile" target="_blank" class="bg-pink-600 text-white font-bold py-4 px-6 rounded-full shadow-lg hover:bg-pink-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-3">
+                                <i class="fab fa-instagram text-xl"></i>
+                                <span class="text-lg">Instagram</span>
+                            </a>
                         </div>
-                        <div class="info-item">
-                            <i class="fas fa-phone"></i>
-                            <p>+91 7382072919, 9491432038</p>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-envelope"></i>
-                            <p><a href="mailto:info@anjanaasfoundation.org">info@anjanaasfoundation.org</a></p>
-                        </div>
-
-                        <h3>Follow Us</h3>
-                        <p>Stay connected and get the latest updates on our social media platforms.</p>
-                        <div class="social-icons">
-                            <a href="#" aria-label="Anjanaas Foundation on Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" aria-label="Anjanaas Foundation on Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="#" aria-label="Anjanaas Foundation on YouTube"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="contact-form-container">
-                        <h3>Send Us a Message</h3>
-                        <!-- Form with mailto action for simplicity, as no backend is available -->
-                        <form action="mailto:info@anjanaasfoundation.org" method="post" enctype="text/plain" class="contact-form">
-                            <div class="form-group">
-                                <label for="name">Your Name</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Your Email</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <input type="text" id="subject" name="subject" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                        </form>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Location Section with Map -->
+        <section class="py-16 sm:py-24 bg-gray-100">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-2xl sm:text-3xl font-bold text-indigo-700 mb-6">Find Our Location</h2>
+                <div class="max-w-4xl mx-auto rounded-lg shadow-xl overflow-hidden">
+                    <!-- Google Maps Embed for Avanigadda, Andhra Pradesh -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15324.962635921822!2d80.84158652233984!3d16.012377395027584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4a58925760eb8d%3A0x6b12a83e0c07e05a!2sAvanigadda%2C%20Andhra%20Pradesh%20521121!5e0!3m2!1sen!2sin!4v1714570000000!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <p class="text-gray-700 mt-6 text-sm">
+                    H.NO. 1-146/2, Ramachandrapuram, Avanigadda, Krishna District, AP - 521121
+                </p>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer Section -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h4>About Anjanaas</h4>
-                    <p>Anjanaas Foundation is a registered NGO committed to social service, education, and skill development in Avanigadda, Andhra Pradesh.</p>
-                    <div class="social-icons">
-                        <a href="#" aria-label="Anjanaas Foundation on Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Anjanaas Foundation on Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Anjanaas Foundation on YouTube"><i class="fab fa-youtube"></i></a>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- About Column -->
+                <div class="mb-8 md:mb-0">
+                    <h4 class="text-xl font-bold text-amber-400 mb-4">About Anjanaas</h4>
+                    <p class="text-gray-400 leading-relaxed mb-4">Anjanaas Foundation is a registered NGO committed to social service, education, and skill development in Avanigadda, Andhra Pradesh.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/yourpage" target="_blank" aria-label="Anjanaas Foundation on Facebook" class="text-gray-300 hover:text-white transition-colors duration-300"><i class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Anjanaas Foundation on Instagram" class="text-gray-300 hover:text-white transition-colors duration-300"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="https://www.youtube.com/yourchannel" target="_blank" aria-label="Anjanaas Foundation on YouTube" class="text-gray-300 hover:text-white transition-colors duration-300"><i class="fab fa-youtube text-xl"></i></a>
                     </div>
                 </div>
-                <div class="footer-column">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="programs.html">Our Programs</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="donate.html">Donate</a></li>
+                <!-- Quick Links Column -->
+                <div class="mb-8 md:mb-0">
+                    <h4 class="text-xl font-bold text-amber-400 mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="programs.html" class="text-gray-400 hover:text-white transition-colors duration-300">Our Programs</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors duration-300">Contact</a></li>
+                        <li><a href="donate.html" class="text-gray-400 hover:text-white transition-colors duration-300">Donate</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h4>Contact Us</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> H.NO. 1-146/2, Ramachandrapuram, Avanigadda, Krishna District, AP - 521121</p>
-                    <p><i class="fas fa-phone"></i> +91 7382072919, 9491432038</p>
-                    <p><i class="fas fa-envelope"></i> info@anjanaasfoundation.org</p>
+                <!-- Contact Us Column -->
+                <div>
+                    <h4 class="text-xl font-bold text-amber-400 mb-4">Contact Us</h4>
+                    <address class="space-y-4 not-italic">
+                        <p class="text-gray-400 flex items-start"><i class="fas fa-map-marker-alt text-amber-400 mr-3 mt-1"></i>H.NO. 1-146/2, Ramachandrapuram, Avanigadda, Krishna District, AP - 521121</p>
+                        <p class="text-gray-400 flex items-center"><i class="fas fa-phone text-amber-400 mr-3"></i>+91 7382072919, 9491432038</p>
+                        <p class="text-gray-400 flex items-center"><i class="fas fa-envelope text-amber-400 mr-3"></i>info@anjanaasfoundation.org</p>
+                    </address>
                 </div>
             </div>
-            <div class="footer-bottom">
+            <div class="text-center text-gray-500 text-sm mt-8 pt-8 border-t border-gray-700">
                 <p>&copy; 2025 Anjanaas Foundation. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- All JavaScript in a single block at the end of the body -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log('Anjanaas Foundation contact page loaded.');
-            
-            // Placeholder for any future JavaScript functionality.
-        });
-    </script>
-    <script src="https://kit.fontawesome.com/your-font-awesome-kit-id.js" crossorigin="anonymous"></script>
-
 </body>
 </html>
-
